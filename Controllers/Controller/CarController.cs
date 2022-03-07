@@ -14,7 +14,8 @@ namespace Obligatoriskdel3.Controllers.Managers
     {
         private CarManager _manager = new CarManager();
         // GET: api/Cars?modelFilter<value>
-
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet]
         public ActionResult<IEnumerable<Car>> Get([FromQuery] string modelFilter, [FromQuery] int? priceFilter,
             [FromQuery] string licensePlateFilter)
